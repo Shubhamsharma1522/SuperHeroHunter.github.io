@@ -1,5 +1,3 @@
-
-
 let listOfHeroInDom = document.getElementById("heroList");
 let errorMessage =  document.getElementById("errorMessage");
 
@@ -29,7 +27,7 @@ function renderHeroList(){
         
   
         errorMessage.innerHTML = 
-        `No superhero hunter found with that name`;
+        `No superhero found with that name`;
       
         return;
     }
