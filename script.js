@@ -43,21 +43,8 @@ async function searchInput(text){
 
     if(text.length != 0){
 
-        
-        const publicKey = "68fe24376be7f83f8f029f6f227986e1";
-        const privateKey = "46193b4c5166ac4889da8d131991244ee54d6c39";
-
-        // Example request to fetch a list of marvel Characters
-
-        const timestamp = new Date().getTime();
-        const apiUrl =  `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&nameStartsWith=${text}&`;
-
-       const hash = CryptoJS.MD5(timestamp + privateKey + publicKey).toString();
-
-       //Construct the URL with the necessary query parameters
-       const url = `${apiUrl}&apikey=${publicKey}&hash=${hash}`;
-        
-    //let url = `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${text}&apikey=c2595c6e10b8e75e6bd3b3c61b14547c&hash=77964d9b5c2bef6213992685d7c2dfd4&ts=1`;
+       
+    let url = `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${text}&apikey=c2595c6e10b8e75e6bd3b3c61b14547c&hash=77964d9b5c2bef6213992685d7c2dfd4&ts=1`;
         let response = await fetch(url);
         const data1 = await response.json();
         listOfHeros = (data1.data.results);
