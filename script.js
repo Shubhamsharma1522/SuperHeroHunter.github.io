@@ -43,8 +43,7 @@ async function searchInput(text){
 
     if(text.length != 0){
 
-       
-    let url = `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${text}&apikey=c2595c6e10b8e75e6bd3b3c61b14547c&hash=77964d9b5c2bef6213992685d7c2dfd4&ts=1`;
+        let url = `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${text}&apikey=c2595c6e10b8e75e6bd3b3c61b14547c&hash=77964d9b5c2bef6213992685d7c2dfd4&ts=1`;
         let response = await fetch(url);
         const data1 = await response.json();
         listOfHeros = (data1.data.results);
